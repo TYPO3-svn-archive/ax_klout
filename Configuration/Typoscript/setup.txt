@@ -1,0 +1,22 @@
+ # Plugin configuration
+plugin.tx_blogexample {
+	settings {
+		 # maximum number of posts to display per page
+		apiKey = 3		
+	}
+	persistence {
+		storagePid = {$plugin.tx_blogexample.persistence.storagePid}		
+	}
+	view {
+		templateRootPath = {$plugin.tx_blogexample.view.templateRootPath}
+		partialRootPath = {$plugin.tx_blogexample.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_blogexample.view.layoutRootPath}
+		defaultPid = auto
+	}
+	# This is an example how to modify the translation
+	_LOCAL_LANG {
+		default {
+			someUnusedKey = foo
+		}
+	}
+}
