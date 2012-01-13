@@ -36,7 +36,14 @@ class Tx_BlogExample_Domain_Service_BlogFactory implements t3lib_Singleton {
 		$this->apiKey = $apiKey;
 	}
 	
-	public function getScoreForUsers($twitter_screen_names) {
+	/*
+	 * Get one or more Klout user profiles
+	 * 
+	 * @param string $twitter_screen_name One or more twitter screen names separated by 
+	 * comma
+	 * @return array Tx_Domain_Model_User
+	 */	
+	public function showUser($twitter_screen_names) {
 		
 		$apiUrl = 'http://api.klout.com/1/klout.xml?users=' . 
 			$twitter_screen_names . '&key=' . $this->apiKey;
@@ -64,6 +71,22 @@ class Tx_BlogExample_Domain_Service_BlogFactory implements t3lib_Singleton {
 			
 			$usersArr[] = new Tx_AxKlout_Domain_Model_User();
  		}
+		
+	}
+
+	public function kloutScore($twitter_screen_name) {
+		
+	}
+	
+	public function topics($twitter_screen_name) {
+		
+	}
+	
+	public function influencedBy($twitter_screen_name) {
+		
+	}
+	
+	public function influencerOf($twitter_screen_name) {
 		
 	}
 }
